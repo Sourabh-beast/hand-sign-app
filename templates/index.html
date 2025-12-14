@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Sign Recognition</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🤟 Hand Sign Recognition</h1>
+            <p class="subtitle">Make letter shapes with your fingers - supports both hands!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Camera Feed Section -->
+            <section class="camera-section">
+                <div class="camera-container">
+                    <img id="camera-feed" src="/video_feed" alt="Camera Feed">
+                    <div class="camera-overlay">
+                        <div class="detection-status" id="detection-status">
+                            <span class="status-dot"></span>
+                            <span>Detecting...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Current Letter Display -->
+            <section class="letter-section">
+                <div class="letter-display">
+                    <div class="letter-label">Detected Letter</div>
+                    <div class="letter-value" id="current-letter">-</div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="confidence-fill"></div>
+                    </div>
+                    <div class="confidence-text" id="confidence-text">Waiting for hand...</div>
+                </div>
+                
+                <!-- Quick Reference -->
+                <div class="quick-reference">
+                    <h3>Quick Tips</h3>
+                    <ul>
+                        <li>✊ Fist = A</li>
+                        <li>☝️ One finger = D</li>
+                        <li>✌️ V-shape = V</li>
+                        <li>🤟 3 fingers = W</li>
+                        <li>🖐️ Open hand = B</li>
+                        <li>👍+☝️ L-shape = L</li>
+                        <li>🤙 Thumb+Pinky = Y</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Notepad Section -->
+        <section class="notepad-section">
+            <div class="notepad-header">
+                <h2>📝 Notepad</h2>
+                <div class="notepad-controls">
+                    <button id="btn-space" class="control-btn">
+                        <span>Space</span>
+                    </button>
+                    <button id="btn-newline" class="control-btn">
+                        <span>Enter</span>
+                    </button>
+                    <button id="btn-backspace" class="control-btn warning">
+                        <span>⌫ Backspace</span>
+                    </button>
+                    <button id="btn-clear" class="control-btn danger">
+                        <span>🗑️ Clear All</span>
+                    </button>
+                </div>
+            </div>
+            <div class="notepad-content">
+                <div id="notepad-text" class="notepad-text"></div>
+                <div class="cursor">|</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
