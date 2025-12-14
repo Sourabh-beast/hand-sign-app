@@ -1,1 +1,0 @@
-# hand-sign-app
