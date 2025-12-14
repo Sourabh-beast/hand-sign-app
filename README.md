@@ -28,21 +28,34 @@ A real-time hand gesture recognition web application that converts hand signs in
 ## 🚀 Installation
 
 ### Prerequisites
-- Python 3.8+
+- **Python 3.11 or 3.12** (Required - Python 3.13 is NOT supported due to MediaPipe compatibility)
 - Webcam
 
 ### Setup
 
-1. **Clone or download** the project
-
-2. **Create virtual environment** (recommended):
+1. **Clone the repository**:
    ```bash
-   python -m venv venv
+   git clone https://github.com/Sourabh-beast/hand-sign-app.git
+   cd hand-sign-app
+   ```
+
+2. **Create virtual environment with Python 3.12**:
+   ```bash
+   # Windows
+   py -3.12 -m venv venv
+   
+   # Mac/Linux
+   python3.12 -m venv venv
    ```
 
 3. **Activate virtual environment**:
-   - Windows: `venv\Scripts\activate`
-   - Mac/Linux: `source venv/bin/activate`
+   ```bash
+   # Windows
+   .\venv\Scripts\activate
+   
+   # Mac/Linux
+   source venv/bin/activate
+   ```
 
 4. **Install dependencies**:
    ```bash
@@ -81,6 +94,8 @@ hand-sign-app/
 ├── hand_detector.py     # Hand detection using MediaPipe
 ├── gesture_classifier.py # Gesture recognition logic
 ├── requirements.txt     # Python dependencies
+├── README.md            # This file
+├── .gitignore           # Git ignore rules
 ├── templates/
 │   └── index.html       # Web interface
 └── static/
@@ -102,6 +117,7 @@ In `app.py`, you can adjust:
 - **Flask** - Python web framework
 - **MediaPipe** - Hand detection and landmark tracking
 - **OpenCV** - Camera capture and image processing
+- **NumPy** - Numerical computations
 - **JavaScript** - Frontend interactivity
 
 ## 💡 Tips for Better Recognition
@@ -116,10 +132,20 @@ In `app.py`, you can adjust:
 
 | Issue | Solution |
 |-------|----------|
+| `No module named 'mediapipe'` | Use Python 3.11 or 3.12 (not 3.13) |
 | Camera not working | Check browser permissions |
 | No hand detected | Improve lighting, move closer |
 | Wrong letters | Make gestures more distinct |
 | App won't start | Check if port 5000 is free |
+
+## 📋 Requirements
+
+```
+flask
+opencv-python
+mediapipe
+numpy
+```
 
 ## 📝 License
 
